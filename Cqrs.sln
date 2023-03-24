@@ -5,19 +5,23 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{2522F022-7A1A-40A8-B551-2E2B6496A2FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{B239A37B-B4CD-4091-8F2D-62E24D032EBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{B239A37B-B4CD-4091-8F2D-62E24D032EBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A2C2ED4E-7664-4DA7-AF68-4B63F2CA0662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A2C2ED4E-7664-4DA7-AF68-4B63F2CA0662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1DEE20A9-EFB7-484F-8C40-82EB9DC9D965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1DEE20A9-EFB7-484F-8C40-82EB9DC9D965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistance\Persistence.csproj", "{3EE56E6B-77E7-4AF9-A284-FAFB46096475}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistance\Persistence.csproj", "{3EE56E6B-77E7-4AF9-A284-FAFB46096475}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corePackages", "corePackages", "{A9620E44-930A-406D-822A-228586C8707D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistence", "corePackages\Core.Persistance\Core.Persistence.csproj", "{1657225F-5246-48AA-AC1E-3359B99A1957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "corePackages\Core.Persistance\Core.Persistence.csproj", "{1657225F-5246-48AA-AC1E-3359B99A1957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.CrossCuttingConcerns", "corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj", "{484816F5-6997-4AC5-BF39-86EB51F7AFB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.CrossCuttingConcerns", "corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj", "{484816F5-6997-4AC5-BF39-86EB51F7AFB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "corePackages\Core.Application\Core.Application.csproj", "{272D488E-BEDD-4FB4-9EAF-9F1D4311587A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Security", "corePackages\Core.Security\Core.Security.csproj", "{F5826FB3-F08E-4331-B609-5B67D7C0B6F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{484816F5-6997-4AC5-BF39-86EB51F7AFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{484816F5-6997-4AC5-BF39-86EB51F7AFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{484816F5-6997-4AC5-BF39-86EB51F7AFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{272D488E-BEDD-4FB4-9EAF-9F1D4311587A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272D488E-BEDD-4FB4-9EAF-9F1D4311587A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{272D488E-BEDD-4FB4-9EAF-9F1D4311587A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{272D488E-BEDD-4FB4-9EAF-9F1D4311587A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5826FB3-F08E-4331-B609-5B67D7C0B6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5826FB3-F08E-4331-B609-5B67D7C0B6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5826FB3-F08E-4331-B609-5B67D7C0B6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5826FB3-F08E-4331-B609-5B67D7C0B6F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +72,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1657225F-5246-48AA-AC1E-3359B99A1957} = {A9620E44-930A-406D-822A-228586C8707D}
 		{484816F5-6997-4AC5-BF39-86EB51F7AFB8} = {A9620E44-930A-406D-822A-228586C8707D}
+		{272D488E-BEDD-4FB4-9EAF-9F1D4311587A} = {A9620E44-930A-406D-822A-228586C8707D}
+		{F5826FB3-F08E-4331-B609-5B67D7C0B6F5} = {A9620E44-930A-406D-822A-228586C8707D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0821CEE-5FF8-428A-8ABA-E06DE5C70ADB}

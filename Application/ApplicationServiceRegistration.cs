@@ -1,4 +1,6 @@
 ﻿using Application.Features.Languages.Rules;
+using Core.Application.Pipelines.Validation;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -20,8 +22,8 @@ namespace Application
 
 
             services.AddScoped<LanguageBusinessRules>();
-           // services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-           // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));

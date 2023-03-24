@@ -1,5 +1,10 @@
 ﻿using Application.Features.Languages.Commands.CreateLanguage;
 using Application.Features.Languages.Dtos;
+using Application.Features.Languages.Models;
+using Application.Features.Languages.Queries.GetByIdLanguage;
+using Application.Features.Languages.Queries.GetListLanguage;
+using Core.Application.Requests;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -13,6 +18,23 @@ namespace WebAPI.Controllers
         {
             CreatedLanguageDto result = await Mediator.Send(createLanguageCommand);
             return Created("", result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
+        {
+
+            GetListLanguageQuery getListLanguageQuery = new() { PageRequest = pageRequest };
+            LanguageListModel result = await Mediator.Send(getListLanguageQuery);
+            return Ok(result);
+
+        }
+
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetById([FromRoute] GetByIdLanguageQuery getByIdLanguageQuery)
+        {
+            LanguageGetByIdDto languageGetByIdDto = await Mediator.Send(getByIdLanguageQuery);
+            return Ok(languageGetByIdDto);
         }
     }
 }

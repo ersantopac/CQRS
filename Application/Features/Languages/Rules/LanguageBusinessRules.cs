@@ -1,5 +1,6 @@
 ﻿using Application.Services.Repositories;
 using Core.CrossCuttingConcerns;
+using Core.CrossCuttingConcerns.Exceptions;
 using Core.Persistence.Paging;
 using Domain.Entities;
 using System;
@@ -23,6 +24,12 @@ namespace Application.Features.Languages.Rules
         {
             IPaginate<Language> result = await _languageRepository.GetListAsync(l=>l.Name==name);
             if (result.Items.Any())throw new BusinessException("Language name exists.");
+        }
+
+        public void LanguageShouldExistsWhenRequested(Language language)
+        {
+            if (language == null) throw new BusinessException("Language does not exists");
+            
         }
     }
 }

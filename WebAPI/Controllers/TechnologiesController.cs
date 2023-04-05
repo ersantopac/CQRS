@@ -1,4 +1,6 @@
-﻿using Application.Features.Technologies.Models;
+﻿using Application.Features.Technologies.Commands.CreateTechnology;
+using Application.Features.Technologies.Dtos;
+using Application.Features.Technologies.Models;
 using Application.Features.Technologies.Queries.GetListTechnology;
 using Core.Application.Requests;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +18,13 @@ namespace WebAPI.Controllers
             GetListTechnologyQuery getListTechnologyQuery = new GetListTechnologyQuery { PageRequest = pageRequest };
             TechnologyListModel result = await Mediator.Send(getListTechnologyQuery);
             return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody] CreateTechnologyCommand createTechnologyCommand)
+        {
+            CreatedTechnologyDto result = await Mediator.Send(createTechnologyCommand);
+            return Created("", result);
         }
     }
 }

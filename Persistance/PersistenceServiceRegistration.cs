@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistance.Contexts;
 using Persistance.Repositories;
-
+using Persistence.Repositories;
 
 namespace Persistance
 {
@@ -15,6 +15,8 @@ namespace Persistance
             services.AddDbContext<BaseDbContext>(options=>
                                                 options.UseSqlServer(configuration.GetConnectionString("CqrsTemp")));
             services.AddScoped<ILanguageRepository,LanguageRepository>();
+
+            services.AddScoped<ITechnologyRepository, TechnologyRepository>();
 
             return services;
         }

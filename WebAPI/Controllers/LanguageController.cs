@@ -1,4 +1,5 @@
 ﻿using Application.Features.Languages.Commands.CreateLanguage;
+using Application.Features.Languages.Commands.DeleteLanguage;
 using Application.Features.Languages.Commands.UpdateLanguage;
 using Application.Features.Languages.Dtos;
 using Application.Features.Languages.Models;
@@ -36,6 +37,13 @@ namespace WebAPI.Controllers
         {
             LanguageGetByIdDto languageGetByIdDto = await Mediator.Send(getByIdLanguageQuery);
             return Ok(languageGetByIdDto);
+        }
+
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> Delete([FromBody] DeleteLanguageCommand deleteLanguageCommand)
+        {
+            DeletedLanguageDto result = await Mediator.Send(deleteLanguageCommand);
+            return Ok(result);
         }
 
         [HttpPut]

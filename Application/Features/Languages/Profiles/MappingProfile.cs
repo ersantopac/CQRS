@@ -1,4 +1,5 @@
 ﻿using Application.Features.Languages.Commands.CreateLanguage;
+using Application.Features.Languages.Commands.DeleteLanguage;
 using Application.Features.Languages.Commands.UpdateLanguage;
 using Application.Features.Languages.Dtos;
 using Application.Features.Languages.Models;
@@ -22,6 +23,10 @@ namespace Application.Features.Languages.Profiles
 
             CreateMap<Language, UpdatedLanguageDto>().ReverseMap();
             CreateMap<Language, UpdateLanguageCommand>().ReverseMap();
+
+            CreateMap<Language, DeletedLanguageDto>().ReverseMap();
+            CreateMap<Language, DeleteLanguageCommand>().ReverseMap();
+
 
             CreateMap<IPaginate<Language>, LanguageListModel>().ReverseMap();
             CreateMap<Language, LanguageListDto>().ReverseMap();

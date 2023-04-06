@@ -15,9 +15,9 @@ namespace Application.Features.Languages.Commands.UpdateLanguage
 {
     public class UpdateLanguageCommand:IRequest<UpdatedLanguageDto>
     {
-        public string Name { get; set; }
         public int Id { get; set; }
-
+        public string Name { get; set; }
+       
         public class UpdateLanguageCommandHandler : IRequestHandler<UpdateLanguageCommand, UpdatedLanguageDto>
         {
             private readonly ILanguageRepository _languageRepository;

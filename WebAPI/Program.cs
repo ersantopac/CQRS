@@ -1,4 +1,5 @@
 using Application;
+using Core.Security.JWT;
 using Microsoft.OpenApi.Models;
 using Persistance;
 
@@ -10,10 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
-//builder.Services.AddSecurityServices();
+builder.Services.AddSecurityServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 //builder.Services.AddInfrastructureServices();
-//builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpContextAccessor();
+TokenOptions tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
 builder.Services.AddSwaggerGen(opt =>
 {
@@ -51,7 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.ConfigureCustomExceptionMiddleware();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

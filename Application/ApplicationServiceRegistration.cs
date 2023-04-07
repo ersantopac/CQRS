@@ -1,4 +1,5 @@
 ﻿using Application.Features.Auts.Rules;
+using Application.Features.Claims.Rules;
 using Application.Features.Languages.Rules;
 using Application.Services.AuthService;
 using Core.Application.Pipelines.Validation;
@@ -26,6 +27,7 @@ namespace Application
             services.AddScoped<AuthManager>();
 
             services.AddScoped<LanguageBusinessRules>();
+            services.AddScoped<OperationClaimBusinessRules>();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));

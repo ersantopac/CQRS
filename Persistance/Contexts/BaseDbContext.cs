@@ -12,8 +12,8 @@ namespace Persistance.Contexts
         public DbSet<Language> Languages { get; set; }
         public DbSet<Technology> Technologies { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<OperationClaim> OperationClaim { get; set; }
-        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<Core.Security.Entities.OperationClaim> OperationClaims { get; set; }
+        public DbSet<Core.Security.Entities.UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
 
@@ -44,12 +44,16 @@ namespace Persistance.Contexts
 
             });
 
+
+           
+
             Language[] languageEntitySeeds = { new(1,"C#"), new(2, "Java"), new(3, "Python") };
             modelBuilder.Entity<Language>().HasData(languageEntitySeeds);
 
             Technology[] technologyEntitySeeds = { new(1,1,"Asp.NET"), new(2, 2,"Spring"), new(3,2, "JSP") };
             modelBuilder.Entity<Technology>().HasData(technologyEntitySeeds);
-            
+
+
         }
     }
 }
